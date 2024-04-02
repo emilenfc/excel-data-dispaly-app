@@ -38,7 +38,9 @@ const IndexPage: React.FC = () => {
     <div className="max-w-3xl mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4">Excel Data Display</h1>
       <FileUpload onFileUpload={handleFileUpload} />
-      {fileData && <EditableTableGrid data={fileData} />}
+      <div className="overflow-x-auto">
+        {fileData && <EditableTableGrid data={fileData} />}
+      </div>
       {fileData && (
         <button className="bg-blue-500 text-white px-4 py-2 rounded mt-4" onClick={handleCopyToClipboard}>Copy to Clipboard</button>
       )}
